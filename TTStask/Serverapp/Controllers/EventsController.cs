@@ -14,7 +14,7 @@ namespace Serverapp.Controllers
             _logger = logger;
         }
         [HttpPost("Sendevent")]
-        public void Sendevent(Mouseevents mouseevent)
+        public void Sendevent(Mouseevent mouseevent)
         {
             using (DatabaseContext db = new DatabaseContext())
             {

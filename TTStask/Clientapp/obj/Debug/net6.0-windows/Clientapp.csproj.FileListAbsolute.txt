@@ -67,8 +67,6 @@ C:\Users\Эмиль\source\repos\TTStask\Clientapp\bin\Debug\net6.0-windows\runt
 C:\Users\Эмиль\source\repos\TTStask\Clientapp\bin\Debug\net6.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Эмиль\source\repos\TTStask\Clientapp\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Clientapp.csproj.AssemblyReference.cache
-C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Auth.g.cs
-C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Main.g.cs
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Clientapp_MarkupCompile.cache
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Clientapp_MarkupCompile.lref
@@ -126,8 +124,6 @@ C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Cli
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\bin\Debug\net6.0-windows\AppLibrary.dll
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\bin\Debug\net6.0-windows\AppLibrary.pdb
-C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Auth.baml
-C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Main.baml
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Clientapp.g.resources
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Clientapp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Clientapp.AssemblyInfoInputs.cache
@@ -136,3 +132,8 @@ C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Cli
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Clientapp.csproj.CopyComplete
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Clientapp.genruntimeconfig.cache
 C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\ref\Clientapp.dll
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Views\Auth.g.cs
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Views\Main.g.cs
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Views\Auth.baml
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\Clientapp\obj\Debug\net6.0-windows\Views\Main.baml

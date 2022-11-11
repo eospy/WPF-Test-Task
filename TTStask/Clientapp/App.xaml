@@ -1,9 +1,9 @@
 ﻿<Application x:Class="Clientapp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Clientapp"
+             xmlns:local="clr-namespace:Clientapp.ViewModels"
              >
     <Application.Resources>
-
+        <local:AppViewModel x:Key="AppViewModel"/>
     </Application.Resources>
 </Application>

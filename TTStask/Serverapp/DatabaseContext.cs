@@ -5,7 +5,7 @@ namespace Serverapp
     public class DatabaseContext:DbContext
     {
         public DbSet<User> Users => Set<User>();
-        public DbSet<Mouseevents> Events => Set<Mouseevents>();
+        public DbSet<Mouseevent> Events => Set<Mouseevent>();
         public DbSet<Destinationaddr> Addresses => Set<Destinationaddr>();
         public DatabaseContext() => Database.EnsureCreated();
         protected override void OnConfiguring(DbContextOptionsBuilder options)
