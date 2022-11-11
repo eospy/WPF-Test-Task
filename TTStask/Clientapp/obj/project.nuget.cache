@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0Og7A9chfeF/blQ0K08KW0npCeO4KfTCNpUJazDzketwPg+lr4iQJTSNTUOhvBI8yZilC09bYqKXm5RSBDx9fA==",
+  "dgSpecHash": "zPpuZoonbM5yiIUxynb2Sb6vxITHm2jNBG+UuXmjnZyj1otJYHDEw1fc0MpMEoaJdjInFONGdeNKN4SEuDbdLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Эмиль\\source\\repos\\TTStask\\Clientapp\\Clientapp.csproj",
+  "projectFilePath": "C:\\Users\\Эмиль\\OneDrive\\Документы\\GitHub\\WPF-Test-Task\\TTStask\\Clientapp\\Clientapp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Эмиль\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",
     "C:\\Users\\Эмиль\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

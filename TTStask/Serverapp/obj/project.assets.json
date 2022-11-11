@@ -657,6 +657,16 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "AppLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/AppLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppLibrary.dll": {}
+        }
       }
     }
   },
@@ -1511,10 +1521,16 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "AppLibrary/1.0.0": {
+      "type": "project",
+      "path": "../AppLibrary/AppLibrary.csproj",
+      "msbuildProject": "../AppLibrary/AppLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AppLibrary >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
@@ -1526,11 +1542,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Эмиль\\source\\repos\\TTStask\\Serverapp\\Serverapp.csproj",
+      "projectUniqueName": "C:\\Users\\Эмиль\\OneDrive\\Документы\\GitHub\\WPF-Test-Task\\TTStask\\Serverapp\\Serverapp.csproj",
       "projectName": "Serverapp",
-      "projectPath": "C:\\Users\\Эмиль\\source\\repos\\TTStask\\Serverapp\\Serverapp.csproj",
+      "projectPath": "C:\\Users\\Эмиль\\OneDrive\\Документы\\GitHub\\WPF-Test-Task\\TTStask\\Serverapp\\Serverapp.csproj",
       "packagesPath": "C:\\Users\\Эмиль\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Эмиль\\source\\repos\\TTStask\\Serverapp\\obj\\",
+      "outputPath": "C:\\Users\\Эмиль\\OneDrive\\Документы\\GitHub\\WPF-Test-Task\\TTStask\\Serverapp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Эмиль\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1546,7 +1562,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Эмиль\\OneDrive\\Документы\\GitHub\\WPF-Test-Task\\TTStask\\AppLibrary\\AppLibrary.csproj": {
+              "projectPath": "C:\\Users\\Эмиль\\OneDrive\\Документы\\GitHub\\WPF-Test-Task\\TTStask\\AppLibrary\\AppLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

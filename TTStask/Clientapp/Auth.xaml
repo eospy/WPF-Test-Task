@@ -2,16 +2,15 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Clientapp"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:clientapp="clr-namespace:Clientapp" d:DataContext="{d:DesignInstance Type=clientapp:AppViewModel}"
         mc:Ignorable="d"
         Title="Авторизация" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="Logintextbox" HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="26" TextChanged="Logintextbox_TextChanged"/>
+        <TextBox x:Name="Logintextbox"  HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="26" TextChanged="Logintextbox_TextChanged"/>
         <Label x:Name="Logintext" Content="Логин" HorizontalAlignment="Left" Margin="255,172,0,0" VerticalAlignment="Top" Height="35" Width="53"/>
         <Label x:Name="Passtext" Content="Пароль" HorizontalAlignment="Left" Margin="255,217,0,0" VerticalAlignment="Top" Height="35" Width="53"/>
-        <Button x:Name="Regbtn" Content="Регистрация" HorizontalAlignment="Left" Margin="323,258,0,0" VerticalAlignment="Top" Click="Regbtn_Click"/>
+        <Button x:Name="Regbtn"  Content="Регистрация" HorizontalAlignment="Left" Margin="323,258,0,0" VerticalAlignment="Top" Click="Regbtn_Click"/>
         <Button x:Name="Loginbtn" Content="Вход" HorizontalAlignment="Left" Margin="400,258,0,0" VerticalAlignment="Top" Width="59" Click="Loginbtn_Click"/>
-        <PasswordBox x:Name="Passbox" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="150" Height="26"/>
+        <PasswordBox x:Name="Passbox"  HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="150" Height="26"/>
     </Grid>
 </Window>

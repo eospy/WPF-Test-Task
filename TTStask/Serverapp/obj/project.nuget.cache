@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IZn4d16GZ7aRXKD9b0BjFCtZp5/HR95Jm57hRw33Du3E4c+ufbitBIg0ntpbHZHrvPeLEBESj/GAO566yIWwPQ==",
+  "dgSpecHash": "zcLD1tVZV/JtrkbsKNBLZbqDjY3LZI0wJyzT62YL40f1yaeSwBVDScm9ZxCKzL9SoeHKx+uI+JX07+hlT8YWyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Эмиль\\source\\repos\\TTStask\\Serverapp\\Serverapp.csproj",
+  "projectFilePath": "C:\\Users\\Эмиль\\OneDrive\\Документы\\GitHub\\WPF-Test-Task\\TTStask\\Serverapp\\Serverapp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Эмиль\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Эмиль\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",

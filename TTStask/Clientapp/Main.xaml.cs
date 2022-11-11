@@ -17,12 +17,13 @@ using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using AppLibrary;
 namespace Clientapp
 {
     /// <summary>
     /// Логика взаимодействия для Main.xaml
     /// </summary>
+    //это представление
     public partial class Main : Window
     {
         //имя пользователя
@@ -41,7 +42,7 @@ namespace Clientapp
         int rigthbtncheckbox = -1;
         int leftbtncheckbox = -1;
         DateTime prev;
-        DateTime post; 
+        DateTime post;
         //счётчик количества событий
         int eventscount = 0;
         //количество предложенных отправок

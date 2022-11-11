@@ -10,7 +10,7 @@
         MouseRightButtonDown="Window_MouseRightButtonDown"
         Title="Main" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="Grid" d:ItemsSource="{Binding}" Margin="225,36,225,187" SelectionChanged="DataGrid_SelectionChanged"/>
+        <DataGrid x:Name="Grid" d:ItemsSource="{Binding }" Margin="225,36,225,187" SelectionChanged="DataGrid_SelectionChanged"/>
         <Button x:Name="Startbtn" Content="Запуск" HorizontalAlignment="Left" Margin="225,264,0,0" VerticalAlignment="Top" Height="40" Width="60" Click="Startbtn_Click"/>
         <TextBlock x:Name="Counter" HorizontalAlignment="Left" Margin="290,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="40" FontSize="24"/>
         <CheckBox x:Name="MousemoveCheckBox" IsChecked="True"  Content="mousemove" HorizontalAlignment="Left" Margin="335,262,0,0" VerticalAlignment="Top" Unchecked="MousemoveCheckBox_Unchecked" Checked="MousemoveCheckBox_Checked"/>

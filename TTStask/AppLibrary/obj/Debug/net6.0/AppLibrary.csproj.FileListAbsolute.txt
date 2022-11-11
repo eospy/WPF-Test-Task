@@ -1,0 +1,12 @@
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\bin\Debug\net6.0\AppLibrary.deps.json
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\bin\Debug\net6.0\AppLibrary.dll
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\bin\Debug\net6.0\AppLibrary.pdb
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\AppLibrary.csproj.AssemblyReference.cache
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\AppLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\AppLibrary.AssemblyInfoInputs.cache
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\AppLibrary.AssemblyInfo.cs
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\AppLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\AppLibrary.dll
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\refint\AppLibrary.dll
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\AppLibrary.pdb
+C:\Users\Эмиль\OneDrive\Документы\GitHub\WPF-Test-Task\TTStask\AppLibrary\obj\Debug\net6.0\ref\AppLibrary.dll
