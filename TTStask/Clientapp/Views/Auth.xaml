@@ -9,8 +9,8 @@
         <TextBox x:Name="Logintextbox"  HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="26" TextChanged="Logintextbox_TextChanged"/>
         <Label x:Name="Logintext" Content="Логин" HorizontalAlignment="Left" Margin="255,172,0,0" VerticalAlignment="Top" Height="35" Width="53"/>
         <Label x:Name="Passtext" Content="Пароль" HorizontalAlignment="Left" Margin="255,217,0,0" VerticalAlignment="Top" Height="35" Width="53"/>
-        <Button x:Name="Regbtn"  Content="Регистрация" Command="{Binding RegisterCommand}" HorizontalAlignment="Left" Margin="323,258,0,0" VerticalAlignment="Top" Click="Regbtn_Click" />
-        <Button x:Name="Loginbtn" Content="Вход"  Command="{Binding LoginCommand}" HorizontalAlignment="Left" Margin="400,258,0,0" VerticalAlignment="Top" Width="59"  Click="Loginbtn_Click"/>
+        <Button x:Name="Regbtn"  Content="Регистрация" Click="Regbtn_Click" CommandParameter="regfromxaml"  HorizontalAlignment="Left" Margin="323,258,0,0" VerticalAlignment="Top"  />
+        <Button x:Name="Loginbtn" Content="Вход" Click="Loginbtn_Click" CommandParameter="logfromxaml" HorizontalAlignment="Left" Margin="400,258,0,0" VerticalAlignment="Top" Width="59" />
         <PasswordBox x:Name="Passbox"  HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="150" Height="26"/>
     </Grid>
   
