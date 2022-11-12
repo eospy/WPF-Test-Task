@@ -9,8 +9,8 @@ namespace Clientapp
 {
     public class RelayCommand :IDelegateCommand
     {
-        Action<object> execute;
-        Func<object, bool> canExecute;
+        private readonly Action<object> _executeAction;
+        private readonly Func<object, bool> _canExecuteAction;
 
         // Событие, необходимое для ICommand
         public event EventHandler CanExecuteChanged;
@@ -18,31 +18,21 @@ namespace Clientapp
         // Два конструктора
         public RelayCommand(Action<object> execute, Func<object, bool> canExecute)
         {
-            this.execute = execute;
-            this.canExecute = canExecute;
+            this._executeAction = execute;
+            this._canExecuteAction = canExecute;
         }
 
         public RelayCommand(Action<object> execute)
         {
-            this.execute = execute;
-            this.canExecute = this.AlwaysCanExecute;
+            this._executeAction = execute;
+            this._canExecuteAction = this.AlwaysCanExecute;
         }
 
-        public void Execute(object param)
-        {
-            execute(param);
-        }
+        public void Execute(object param)=>_executeAction(param);
 
-        public bool CanExecute(object param)
-        {
-            return canExecute(param);
-        }
+        public bool CanExecute(object param) => _canExecuteAction?.Invoke(param) ?? true;
 
-        public void RaiseCanExecuteChanged()
-        {
-            if (CanExecuteChanged != null)
-                CanExecuteChanged(this, EventArgs.Empty);
-        }
+        public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 
         private bool AlwaysCanExecute(object param)
         {

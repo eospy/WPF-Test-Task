@@ -19,6 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AppLibrary;
 using System.Net.Http.Json;
+using Clientapp.ViewModels;
 
 namespace Clientapp
 {
@@ -56,7 +57,10 @@ namespace Clientapp
         MessageBoxImage icon = MessageBoxImage.Question;
         public Main(string username)
         {
+            var mainviewmodel = new AuthViewModel();
+            DataContext = mainviewmodel;
             InitializeComponent();
+
             this.username = username;
             Counter.Text= eventscount.ToString();
             eventslist = new ObservableCollection<Mouseevent>();

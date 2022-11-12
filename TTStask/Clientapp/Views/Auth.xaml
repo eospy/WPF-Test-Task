@@ -2,16 +2,16 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:clientapp="clr-namespace:Clientapp" xmlns:viewmodels="clr-namespace:Clientapp.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:AppViewModel}"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:clientapp="clr-namespace:Clientapp" xmlns:viewmodels="clr-namespace:Clientapp.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:AuthViewModel}"
         mc:Ignorable="d"
         Title="Авторизация" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="Logintextbox"  HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="26" TextChanged="Logintextbox_TextChanged"/>
+        <TextBox x:Name="Logintextbox" Text="{Binding Path=Curlogin}" HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="26" />
         <Label x:Name="Logintext" Content="Логин" HorizontalAlignment="Left" Margin="255,172,0,0" VerticalAlignment="Top" Height="35" Width="53"/>
         <Label x:Name="Passtext" Content="Пароль" HorizontalAlignment="Left" Margin="255,217,0,0" VerticalAlignment="Top" Height="35" Width="53"/>
-        <Button x:Name="Regbtn"  Content="Регистрация" Click="Regbtn_Click" CommandParameter="regfromxaml"  HorizontalAlignment="Left" Margin="323,258,0,0" VerticalAlignment="Top"  />
-        <Button x:Name="Loginbtn" Content="Вход" Click="Loginbtn_Click" CommandParameter="logfromxaml" HorizontalAlignment="Left" Margin="400,258,0,0" VerticalAlignment="Top" Width="59" />
-        <PasswordBox x:Name="Passbox"  HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="150" Height="26"/>
+        <Button x:Name="Regbtn" Command="{Binding Path=RegCommand}" CommandParameter="{Binding ElementName=Passbox}" Content="Регистрация"   HorizontalAlignment="Left" Margin="323,258,0,0" VerticalAlignment="Top"  />
+        <Button x:Name="Loginbtn" Command="{Binding Path=LogCommand}" CommandParameter="{Binding ElementName=Passbox}" Content="Вход"    HorizontalAlignment="Left" Margin="400,258,0,0" VerticalAlignment="Top" Width="59" />
+        <PasswordBox x:Name="Passbox"   HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="150" Height="26"/>
     </Grid>
   
 </Window>
