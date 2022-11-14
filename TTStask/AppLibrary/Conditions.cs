@@ -8,9 +8,9 @@ namespace AppLibrary
 {
     public class Conditions
     {
-        public Conditions()
+        public Conditions(string condition)
         {
-
+            this.Condition = condition;
         }
 
         public string Condition { get; set; }

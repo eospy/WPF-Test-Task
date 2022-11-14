@@ -5,18 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clientapp" xmlns:viewmodels="clr-namespace:Clientapp.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        MouseMove="Window_MouseMove"
-        MouseLeftButtonDown="Window_MouseLeftButtonDown"
-        MouseRightButtonDown="Window_MouseRightButtonDown"
         Title="Main" Height="450" Width="800">
+    <Window.InputBindings>
+        <MouseBinding MouseAction="LeftClick"
+                  Command="{Binding MouseButtonCommand}"
+                  CommandParameter="LeftClick"/>
+
+        <MouseBinding MouseAction="RightClick"
+                  Command="{Binding MouseButtonCommand}"
+                  CommandParameter="RightClick"/>
+    </Window.InputBindings>
     <Grid>
-        <DataGrid x:Name="Grid" d:ItemsSource="{Binding }" Margin="225,36,225,187" SelectionChanged="DataGrid_SelectionChanged"/>
-        <Button x:Name="Startbtn" Content="Запуск" HorizontalAlignment="Left" Margin="225,264,0,0" VerticalAlignment="Top" Height="40" Width="60" Click="Startbtn_Click"/>
-        <TextBlock x:Name="Counter" HorizontalAlignment="Left" Margin="290,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="40" FontSize="24"/>
+        <DataGrid x:Name="Grid" ItemsSource="{Binding Path=Events}" Margin="225,36,225,187" />
+        <Button x:Name="Startbtn" Content="Запуск" Command="{Binding Path=Startbuttoncommand}" HorizontalAlignment="Left" Margin="225,264,0,0" VerticalAlignment="Top" Height="40" Width="60" />
+        <TextBlock x:Name="Counter" Text="{Binding Path=Eventscount}"  HorizontalAlignment="Left" Margin="290,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="40" FontSize="24"/>
         <CheckBox x:Name="MousemoveCheckBox" IsChecked="True"  Content="mousemove" HorizontalAlignment="Left" Margin="335,262,0,0" VerticalAlignment="Top" Unchecked="MousemoveCheckBox_Unchecked" Checked="MousemoveCheckBox_Checked"/>
         <CheckBox x:Name="LeftbtnCheckBox" IsChecked="True"  Content="leftbutton" HorizontalAlignment="Left" Margin="335,277,0,0" VerticalAlignment="Top" Unchecked="LeftbtnCheckBox_Unchecked" Checked="LeftbtnCheckBox_Checked_1"/>
         <CheckBox x:Name="RightbtnCheckBox" IsChecked="True"  Content="rightbutton" HorizontalAlignment="Left" Margin="335,292,0,0" VerticalAlignment="Top" Unchecked="RightbtnCheckBox_Unchecked" Checked="RightbtnCheckBox_Checked_1"/>
-        <DatePicker x:Name="Pickerprev" HorizontalAlignment="Left" Margin="433,256,0,0" VerticalAlignment="Top" Height="28" Width="125" SelectedDateChanged="DataGrid_SelectionChanged">
+        <DatePicker x:Name="Pickerprev" HorizontalAlignment="Left" Margin="433,256,0,0" VerticalAlignment="Top" Height="28" Width="125" SelectedDate="{Binding Path=Starttime}">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="Template">
@@ -29,7 +35,7 @@
                 </Style>
             </DatePicker.Resources>
         </DatePicker>
-        <DatePicker x:Name="Pickerpost" HorizontalAlignment="Left" Margin="433,292,0,0" VerticalAlignment="Top" Height="28" Width="125" SelectedDateChanged="DatePicker_SelectedDateChanged_1">
+        <DatePicker x:Name="Pickerpost" HorizontalAlignment="Left" Margin="433,292,0,0" VerticalAlignment="Top" Height="28" Width="125" SelectedDate="{Binding Path=Endtime}">
             <DatePicker.Resources>
                 <Style TargetType="{x:Type DatePickerTextBox}">
                     <Setter Property="Template">
@@ -42,8 +48,8 @@
                 </Style>
             </DatePicker.Resources>
         </DatePicker>
-        <Button x:Name="Filterbydate"  Content="Filter by date" HorizontalAlignment="Left" Margin="459,325,0,0" VerticalAlignment="Top" Click="Filterbydate_Click"/>
-        <Button x:Name="Cancelfilters" Content="Cancel filters" HorizontalAlignment="Left" Margin="348,325,0,0" VerticalAlignment="Top" Click="Cancelfilters_Click"/>
+        <Button x:Name="Filterbydate" Command="{Binding Filterbydatecommand}"  Content="Filter by date" HorizontalAlignment="Left" Margin="459,325,0,0" VerticalAlignment="Top" />
+        <Button x:Name="Cancelfilters" Command='{Binding Cancelfilterscommand}' Content="Cancel filters" HorizontalAlignment="Left" Margin="348,325,0,0" VerticalAlignment="Top" Click="Cancelfilters_Click"/>
 
     </Grid>
 </Window>
