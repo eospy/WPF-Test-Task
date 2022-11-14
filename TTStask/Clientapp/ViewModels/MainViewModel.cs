@@ -35,6 +35,10 @@ namespace Clientapp.ViewModels
         string caption = "Подтверждение отправки";
         MessageBoxButton button = MessageBoxButton.YesNo;
         MessageBoxImage icon = MessageBoxImage.Question;
+        //фильтры
+        private bool checkmousemove = true;
+        private bool checkmouseleft = true;
+        private bool checkmouseright = true;
 
         private readonly RelayCommand _mousebuttoncommand;
         public ICommand MouseButtonCommand => _mousebuttoncommand;
@@ -89,6 +93,96 @@ namespace Clientapp.ViewModels
             else str = "stop";
             var url = "http://localhost:5026/api/events/Recordcondition";
             var result = await Post(url, new Conditions(str));
+        }
+        public bool CheckMouseMove
+        {
+            get { return checkmousemove; }
+            set
+            {
+                if (checkmousemove == true) MouseMoveUncheck();
+                else MouseMoveCheck();
+                if (checkmousemove != value)
+                {
+                    checkmousemove = value;
+                    if (PropertyChanged != null)
+                        PropertyChanged(this, new PropertyChangedEventArgs("CheckMouseMove"));
+                }
+            }
+        }
+        public bool CheckMouseLeft
+        {
+            get { return checkmouseleft; }
+            set
+            {
+                if (checkmouseleft == true) LeftClickUncheck();
+                else LeftClickCheck();
+                if (checkmouseleft != value) 
+                {
+                    checkmouseleft = value;
+                    if (PropertyChanged != null)
+                        PropertyChanged(this, new PropertyChangedEventArgs("CheckMouseLeft"));
+                }
+            }
+        }
+        public bool CheckMouseRight
+        {
+            get { return checkmouseright; }
+            set
+            {
+                if (checkmouseright == true) RightClickUncheck();
+                else RightClickCheck();
+                if (checkmouseright != value)
+                {
+                    checkmouseright = value;
+                    if (PropertyChanged != null)
+                        PropertyChanged(this, new PropertyChangedEventArgs("CheckMouseRight"));
+                }
+            }
+        }
+        private void MouseMoveUncheck()
+        {
+            if (!recordcondition)
+            {
+                var itemsToRemove = eventslist.Where(p => p.Type == "MouseMove").ToList();
+                foreach (var item in itemsToRemove) eventslist.Remove(item);
+            }
+        }
+        private void LeftClickUncheck()
+        {
+            if (!recordcondition)
+            {
+                var itemsToRemove = eventslist.Where(p => p.Type == "LeftClick").ToList();
+                foreach (var item in itemsToRemove) eventslist.Remove(item);
+            }
+        }
+        private void RightClickUncheck()
+        {
+            if (!recordcondition)
+            {
+                var itemsToRemove = eventslist.Where(p => p.Type == "RightClick").ToList();
+                foreach (var item in itemsToRemove) eventslist.Remove(item);
+            }
+        }
+        private void MouseMoveCheck()
+        {
+            if (!recordcondition)
+            {
+                foreach (var item in fulleventslist.Where(i => i.Type == "MouseMove")) eventslist.Add(item);
+            }
+        }
+        private void LeftClickCheck()
+        {
+            if (!recordcondition)
+            {
+                foreach (var item in fulleventslist.Where(i => i.Type == "LeftClick")) eventslist.Add(item);
+            }
+        }
+        private void RightClickCheck()
+        {
+            if (!recordcondition)
+            {
+                foreach (var item in fulleventslist.Where(i => i.Type == "RightClick")) eventslist.Add(item);
+            }
         }
         private void FilterByDate(object param)
         {

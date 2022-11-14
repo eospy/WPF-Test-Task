@@ -36,7 +36,7 @@ namespace Clientapp.ViewModels
             var result = await Post(url, user);
             if (result == "OK")
             {
-                Main mainwindow = new Main(curlogin);
+                Main mainwindow = new Main();
                 mainwindow.Show();
             }
             else MessageBox.Show("Пользователь уже зарегистрирован");
@@ -54,13 +54,13 @@ namespace Clientapp.ViewModels
             var result = await Post(url, user);
             if (result == "Userauth")
             {
-                Main mainwindow = new Main(curlogin);
+                Main mainwindow = new Main();
                 mainwindow.Title = "Main window[Default user]";
                 mainwindow.Show();
             }
             else if (result == "Adminauth")
             {
-                Main mainwindow = new Main(curlogin);
+                Main mainwindow = new Main();
                 mainwindow.Title = "Main window[Administrator]";
                 mainwindow.Show();
             }
