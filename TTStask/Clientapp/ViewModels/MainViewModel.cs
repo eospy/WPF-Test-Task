@@ -51,6 +51,7 @@ namespace Clientapp.ViewModels
 
         private readonly RelayCommand _cancelfilterscommand;
         public ICommand Cancelfilterscommand=> _cancelfilterscommand;
+        
         public MainViewModel()
         {
             eventslist = new ObservableCollection<Mouseevent>();
