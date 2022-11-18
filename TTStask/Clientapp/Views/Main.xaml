@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clientapp" xmlns:viewmodels="clr-namespace:Clientapp.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+        MouseMove="Window_MouseMove"
         mc:Ignorable="d"
         Title="Main" Height="450" Width="800">
     <Window.InputBindings>
@@ -14,9 +15,11 @@
         <MouseBinding MouseAction="RightClick"
                   Command="{Binding MouseButtonCommand}"
                   CommandParameter="RightClick"/>
+        
     </Window.InputBindings>
     <Grid>
-        <DataGrid x:Name="Grid" ItemsSource="{Binding Path=Events}" Margin="225,36,225,187" />
+        
+        <DataGrid x:Name="Grid" ItemsSource="{Binding Path=Events}" Margin="225,36,225,187"/>
         <Button x:Name="Startbtn" Content="Запуск" Command="{Binding Path=Startbuttoncommand}" HorizontalAlignment="Left" Margin="225,264,0,0" VerticalAlignment="Top" Height="40" Width="60" />
         <TextBlock x:Name="Counter" Text="{Binding Path=Eventscount}"  HorizontalAlignment="Left" Margin="290,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="40" FontSize="24"/>
         <CheckBox x:Name="MousemoveCheckBox" IsChecked="{Binding CheckMouseMove}"  Content="mousemove" HorizontalAlignment="Left" Margin="335,262,0,0" VerticalAlignment="Top" />

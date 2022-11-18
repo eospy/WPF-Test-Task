@@ -51,7 +51,8 @@ namespace Clientapp.ViewModels
 
         private readonly RelayCommand _cancelfilterscommand;
         public ICommand Cancelfilterscommand=> _cancelfilterscommand;
-        
+        double xprev = Mouse.GetPosition(null).X;
+        double yprev = Mouse.GetPosition(null).Y;
         public MainViewModel()
         {
             eventslist = new ObservableCollection<Mouseevent>();
@@ -84,7 +85,24 @@ namespace Clientapp.ViewModels
             }
             
         }
-        
+        public void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (recordcondition)
+            {
+                double curx = Mouse.GetPosition(null).X;
+                double cury = Mouse.GetPosition(null).Y;
+                //движение указателя мыши внутри окна приложения
+                if ((Math.Abs(curx - xprev) > 10) || (Math.Abs(cury - yprev) > 10))
+                {
+                    xprev = curx;
+                    yprev = cury;
+                    Mouseevent moveevent = new Mouseevent(DateTime.Now, "MouseMove", curx, cury);
+                    fulleventslist.Add(moveevent);
+                    eventslist.Add(moveevent);
+                    SendEvent(moveevent);
+                }
+            }
+        }
         private async void StartButton(object param)
         {
             recordcondition = !recordcondition;

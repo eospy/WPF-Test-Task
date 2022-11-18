@@ -28,12 +28,21 @@ namespace Clientapp
     /// </summary>
     public partial class Main : Window
     {
+        MainViewModel viewModel;
         public Main()
         {
-            var mainviewmodel = new MainViewModel();
-            DataContext = mainviewmodel;
+            viewModel = new MainViewModel();
+            DataContext = viewModel;
             InitializeComponent();
         }
-        
+        //единственный способ, который я нашел
+        //mousemove невозможно описать в view model
+        //eventtrigger не получается 
+        //напрямую не биндится из-за типа делегата
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+           viewModel.Window_MouseMove(sender, e);
+        }
     }
 }
