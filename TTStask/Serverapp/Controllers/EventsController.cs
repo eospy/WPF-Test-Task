@@ -1,7 +1,6 @@
 ﻿using AppLibrary;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
-
 namespace Serverapp.Controllers
 {
     [Route("api/[controller]")]
@@ -9,46 +8,38 @@ namespace Serverapp.Controllers
     public class EventsController : Controller
     {
         private readonly ILogger _logger;
-        public EventsController(ILogger<MainController> logger)
+        private DatabaseContext _db;
+        Telegram telegram;
+        public EventsController(DatabaseContext databaseContext, ILogger<MainController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _db = databaseContext;
+            telegram = new Telegram(configuration);
         }
         [HttpPost("Sendevent")]
-        public void Sendevent(Mouseevent mouseevent)
+        public void SendEvent(Mouseevent mouseevent)
         {
-            using (DatabaseContext db = new DatabaseContext())
-            {
-                _logger.LogInformation("database loaded(MouseEvents)");
-                db.Events.Add(mouseevent);
-                db.SaveChanges();
-            }
-
+            _logger.LogInformation("database loaded(MouseEvents)");
+            _db.Events.Add(mouseevent);
+            _db.SaveChanges();
         }
 
         [HttpPost("Sendletter")]
-        public void Sendletter(LetterRequest req)
+        public async void SendLetter(LetterRequest req)
         {
             //отправка сообщения в телеграм
-            //в данном случае условный адрес, сохраненный в бд это chat id пользователя
-            //бот @squumabot сможет отправлять сообщения если начать с ним диалог
-            string apiToken = "2081068774:AAGxkq57ZRl9oCD_I0OIa1eacrP0MOf3WQw";
             string chatid = "";
             string text = ("Пользователь:" + req.Username + "-" + req.Eventscount);
-            using (DatabaseContext db = new DatabaseContext())
+            _logger.LogInformation("database loaded(Destinationaddr)");
+            foreach (var addr in _db.Addresses)
             {
-                _logger.LogInformation("database loaded(Destinationaddr)");
-                foreach (var addr in db.Addresses)
-                {
-                    if (addr.Type == "Telegram") chatid = addr.Address;
-                }
+                if (addr.Type == "Telegram") chatid = addr.Address;
             }
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.telegram.org/bot" + apiToken + "/sendMessage?chat_id=" + chatid + "&text=" + text);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            response.Close();
+            await telegram.SendMessage(text, chatid);
 
         }
         [HttpPost("Recordcondition")]
-        public void Recordcondition(Conditions conditions)
+        public void RecordCondition(Conditions conditions)
         {
             _logger.LogInformation("record-" + conditions.Condition);
         }

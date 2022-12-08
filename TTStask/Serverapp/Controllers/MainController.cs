@@ -13,36 +13,33 @@ namespace Serverapp.Controllers
     public class MainController : ControllerBase
     {
         private readonly ILogger _logger;
-        public MainController(ILogger<MainController> logger)
+        private DatabaseContext _db;
+        public MainController(DatabaseContext databaseContext, ILogger<MainController> logger)
         {
             _logger = logger;
+            _db = databaseContext;
         }
         [HttpPost("Reg")]
         public ContentResult Reg(User user)
         {
             bool check = false;
-            using (DatabaseContext db =new DatabaseContext())
+            _logger.LogInformation("database loaded(Users)");
+            foreach (var item in _db.Users)
             {
-                _logger.LogInformation("database loaded(Users)");
-                foreach (var item in db.Users) 
+                if (item.Login == user.Login)
                 {
-                    if (item.Login == user.Login)
-                    {
-                        check = true;
-                        break;
-                    }
+                    check = true;
+                    break;
                 }
-                if (!check)
-                {
-                    db.Users.Add(user);
-                    db.SaveChanges();
-                    _logger.LogInformation(user.Login+"-registration");
-                    return Content("OK");
-                }
-                else return Content("Account already exists");
-
-                
             }
+            if (!check)
+            {
+                _db.Users.Add(user);
+                _db.SaveChanges();
+                _logger.LogInformation(user.Login + "-registration");
+                return Content("OK");
+            }
+            else return Content("Account already exists");
         }
 
         [HttpPost("Log")]
@@ -50,17 +47,14 @@ namespace Serverapp.Controllers
         {
             bool check = false;
             int authtype = 0;
-            using (DatabaseContext db = new DatabaseContext())
+            _logger.LogInformation("database loaded(Users)");
+            foreach (var item in _db.Users)
             {
-                _logger.LogInformation("database loaded(Users)");
-                foreach (var item in db.Users)
+                if ((item.Login == user.Login) && (item.Password == user.Password))
                 {
-                    if ((item.Login == user.Login)&&(item.Password==user.Password))
-                    {
-                        if(item.Type=="admin") authtype=1;
-                        check = true;
-                        break;
-                    }
+                    if (item.Type == "admin") authtype = 1;
+                    check = true;
+                    break;
                 }
             }
             if (check && authtype == 0)
